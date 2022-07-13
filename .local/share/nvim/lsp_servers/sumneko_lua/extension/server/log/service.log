@@ -1,0 +1,78 @@
+[20:58:37.417][info] [#0:/home/stanoira/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/main.lua:65]: Lua Lsp startup, root: 	/home/stanoira/.local/share/nvim/lsp_servers/sumneko_lua/extension/server
+[20:58:37.417][info] [#0:/home/stanoira/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/main.lua:66]: ROOT:	/home/stanoira/.local/share/nvim/lsp_servers/sumneko_lua/extension/server
+[20:58:37.417][info] [#0:/home/stanoira/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/main.lua:67]: LOGPATH:	/home/stanoira/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/log
+[20:58:37.417][info] [#0:/home/stanoira/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/main.lua:68]: METAPATH:	/home/stanoira/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/meta
+[20:58:37.418][info] [#0:/home/stanoira/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/main.lua:69]: VERSION:	3.4.2
+[20:58:37.433][info] [#0:script/service/service.lua:141]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 1.520 MB
+        # 00 : 1.520 MB
+        # 01 : 0.000 MB
+        # 02 : 0.000 MB
+        # 03 : 0.000 MB
+        # 04 : 0.000 MB
+    --------------- Coroutine ---------------
+        Total:     0
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      0
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[20:58:37.537][info] [#0:script/language.lua:137]: VSC language: nil
+[20:58:37.537][info] [#0:script/language.lua:138]: LS  language: en-us
+[20:58:37.638][info] [#0:script/provider/provider.lua:55]: Load config from client	fallback
+[20:58:37.638][info] [#0:script/provider/provider.lua:56]: {
+  Lua = {
+    diagnostics = {
+      globals = { "vim" }
+    },
+    telemetry = {
+      enable = false
+    },
+    workspace = {
+      library = {
+        ["/usr/share/nvim/runtime/lua"] = true,
+        ["/usr/share/nvim/runtime/lua/vim/lsp"] = true
+      }
+    }
+  }
+}
+[20:58:37.638][info] [#0:script/library.lua:207]: Init builtin library at:	nil
+[20:58:37.643][info] [#0:script/plugin.lua:80]: plugin path:	nil
+[20:58:37.643][info] [#0:script/provider/provider.lua:55]: Load config from client	fallback
+[20:58:37.643][info] [#0:script/provider/provider.lua:56]: {
+  Lua = {
+    diagnostics = {
+      globals = { "vim" }
+    },
+    telemetry = {
+      enable = false
+    },
+    workspace = {
+      library = {
+        ["/usr/share/nvim/runtime/lua"] = true,
+        ["/usr/share/nvim/runtime/lua/vim/lsp"] = true
+      }
+    }
+  }
+}
+[20:58:37.644][info] [#0:script/workspace/workspace.lua:285]: Preload start:	<fallback>
+[20:58:37.644][info] [#0:script/workspace/workspace.lua:307]: Scan library at:	file:///home/stanoira/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/meta/Lua%205.4%20en-us%20utf8
+[20:58:37.645][info] [#0:script/workspace/workspace.lua:307]: Scan library at:	file:///usr/share/nvim/runtime/lua
+[20:58:37.646][info] [#0:script/workspace/workspace.lua:307]: Scan library at:	file:///usr/share/nvim/runtime/lua/vim/lsp
+[20:58:39.439][info] [#0:script/workspace/workspace.lua:327]: Found 57 files at:	<fallback>
+[20:58:39.439][info] [#0:script/workspace/loading.lua:152]: Load files from disk:	<fallback>
+[20:58:41.439][info] [#0:script/workspace/loading.lua:164]: Loaded files takes [0.010] sec: <fallback>
+[20:58:41.439][info] [#0:script/workspace/loading.lua:173]: Compile files takes [0.000] sec: <fallback>
+[20:58:41.439][info] [#0:script/workspace/loading.lua:174]: Loaded finish:	<fallback>
+[20:58:41.439][info] [#0:script/workspace/workspace.lua:329]: Preload finish at:	<fallback>
+[20:58:41.699][info] [#0:script/provider/diagnostic.lua:486]: Diagnostics scope [<fallback>], files count:[46]
+[20:58:41.700][warn] [#0:script/proto/proto.lua:122]: Response of [workspace/diagnostic/refresh] error [-32601]: MethodNotFound
+[20:58:41.708][info] [#0:script/provider/diagnostic.lua:503]: Diagnostics scope [<fallback>] finished, takes [0.009] sec.
