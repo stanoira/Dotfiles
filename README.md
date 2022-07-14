@@ -11,3 +11,5 @@ $ xdg-mime default feh.desktop image/jpeg
 -- autosugestion for python in nvim
 
 sudo pacman -S npm
+
+<img scr="Pictures/2022-07-14_16-52.png " width = 100>
