@@ -278,9 +278,10 @@ bindsym $mod+p exec /usr/local/bin/switch-audio-port
 ## App shortcuts
 bindsym $mod+w exec /usr/bin/firefox
 bindsym $mod+n exec /usr/bin/thunar
-bindsym $mod+c exec code
+bindsym $mod+Shift+v exec code
 bindsym Print exec scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 bindsym $mod+Shift+s exec flameshot gui
+bindsym $mod+Shift+f exec flameshot screen -p ~/Pictures/ScreenShots/
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
@@ -291,16 +292,28 @@ bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:"
-set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5:"
-set $ws6 "6:"
-set $ws7 "7:"
-set $ws8 "8:"
-set $ws9 "9:"
-set $ws10 "10:"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+
+# set $ws1 "1:"
+# set $ws2 "2:"
+# set $ws3 "3:"
+# set $ws4 "4:"
+# set $ws5 "5:"
+# set $ws6 "6:"
+# set $ws7 "7:"
+# set $ws8 "8:"
+# set $ws9 "9:"
+# set $ws10 "10:"
 
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
@@ -359,6 +372,9 @@ exec_always --no-startup-id picom --config  ~/.config/picom/picom.conf
 #############################################
 # autostart applications/services on login: #
 #############################################
+
+# Polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 #get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -488,7 +504,7 @@ set $yellowbrown	#e1b700
 client.focused		$lightblue	$darkblue	$white		$mediumgrey		$mediumgrey
 client.unfocused	$darkblue	$darkblue	$grey		$grey		$darkgrey
 client.focused_inactive	$darkblue	$darkblue	$grey		$grey		$black
-client.urgent		$urgentred	$urgentred	$white		$grey		$yellowbrown
+client.urgent		$urgentred	$urgentred	$white		$grey		$urgentred
 
 ############################################
 # bar settings (input comes from i3blocks) #
@@ -496,32 +512,32 @@ client.urgent		$urgentred	$urgentred	$white		$grey		$yellowbrown
 
 # Start i3bar to display a workspace bar
 # (plus the system information i3status finds out, if available)
-bar {
-		font pango: Hack Regular Nerd Font Complete 10
-		status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        position top
-#	    	i3bar_command i3bar --transparency
-# it could be that you have no primary display set: set one (xrandr --output <output> --primary)
-# reference: https://i3wm.org/docs/userguide.html#_tray_output
-		    tray_output primary
-		    tray_padding 0
-# When strip_workspace_numbers is set to yes,
-# any workspace that has a name of the form
-# “[n][:][NAME]” will display only the name.
-strip_workspace_numbers yes
-##strip_workspace_name no
-
-		    colors {
-		    separator          $purple
-		    background         $darkgrey
-		    statusline         $white
-#                          		border 		        bg		txt		indicator
-		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
-		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
-		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
-		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
-	}
-}
+# bar {
+# 		font pango: Hack Regular Nerd Font Complete 10
+# 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#         position top
+# #	    	i3bar_command i3bar --transparency
+# # it could be that you have no primary display set: set one (xrandr --output <output> --primary)
+# # reference: https://i3wm.org/docs/userguide.html#_tray_output
+# 		    tray_output primary
+# 		    tray_padding 0
+# # When strip_workspace_numbers is set to yes,
+# # any workspace that has a name of the form
+# # “[n][:][NAME]” will display only the name.
+# strip_workspace_numbers yes
+# ##strip_workspace_name no
+#
+# 		    colors {
+# 		    separator          $purple
+# 		    background         $darkgrey
+# 		    statusline         $white
+# #                          		border 		        bg		txt		indicator
+# 		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
+# 		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
+# 		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
+# 		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
+# 	}
+# }
 
 # you can add different bars for multidisplay setups on each display:
 # set output HDMI-0 to the display you want the bar, --transparency can be set.
@@ -562,6 +578,8 @@ strip_workspace_numbers yes
 
 bindsym $mod+d exec rofi -modi drun -show drun \
 		-config ~/.config/rofi/rofidmenu.rasi
+
+bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.config/rofi/rofidmenu.rasi
 
 #bindsym F9 exec rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
