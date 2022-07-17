@@ -333,6 +333,8 @@ assign [class="(?i)firefox"] $ws3
 assign [class="discord"] $ws4
 assign [class="easyeffects"] $ws9
 
+for_window [class="Spotify"] move to workspace 10
+
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=Xfce4-terminal] focus
 for_window [class=Alacritty] focus
@@ -406,7 +408,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 # set wallpaper
 #exec --no-startup-id sleep 2 && nitrogen --restore
 #exec --no-startup-id feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros_i3.png
-exec --no-startup-id feh  --bg-fill ~/Pictures/JapaneseCity.png
+exec --no-startup-id feh  --bg-fill ~/Pictures/astronaut.png
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
