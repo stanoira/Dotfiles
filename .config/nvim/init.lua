@@ -6,6 +6,7 @@ require("stanoira.autocommands")
 -- set colorscheme
 vim.cmd("colorscheme rose-pine")
 -- vim.cmd("colorscheme tokyonight")
+-- vim.cmd("colorscheme nord")
 
 require("stanoira.lsp")
 require("stanoira.cmp")
