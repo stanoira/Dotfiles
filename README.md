@@ -2,9 +2,15 @@
 
 ### Software I use:
 * Terminal -> Alacritty
+* Window Manager -> i3
+* IDE/Text Editor -> NVIM
+* Compositor -> Picom
+* Aplication Launcher -> rofi
+* Shell -> zsh
+* Status Bar -> Polybar
+* Terminal File Manager -> lofi
 
-This are my dotfiles for my linux(endevourOS) config. Here are some things that
-may be helpful:
+Here are some things that may be helpful:
 
 -- https://wiki.archlinux.org/title/Xdg-utils
 
@@ -19,6 +25,7 @@ sudo pacman -S npm
 
 #### Rose-Pine
 ![SCREEN](/Pictures/Rose-Pine)
+
 
 ### Tokyo-Night
 <!-- ![SCREENSHOT]() -->
