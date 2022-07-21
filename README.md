@@ -1,6 +1,6 @@
 # My Personal Dotfiles
 
-##Software I use:
+## Software I use:
 
 
 This are my dotfiles for my linux(endevourOS) config. Here are some things that
