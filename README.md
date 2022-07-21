@@ -22,7 +22,7 @@ Here are some things that may be helpful:
 ### Galery:
 
 #### Rose-Pine
-![SCREEN](/Pictures/Rose-Pine)
+![SCREEN](/Pictures/Rose-Pine.png)
 
 ### Tokyo-Night
 ![SCREEN](/Pictures/Tokyo-Night)
