@@ -1,0 +1,105 @@
+alias c="clear" 
+alias ..="cd .."
+alias v="nvim"
+alias n="nsxiv"
+alias cp="cp -i"    
+alias mv="mv -i"    
+alias df='df -h'    
+alias free='free -hm'
+alias path="echo $PATH | sed -e 's/:/\n/g' | sort"
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+alias ls='ls --color'
+
+#git aliases
+alias g='git'
+alias gp='git push'
+alias gs='git status'
+alias ga='git add'
+alias gaa='git add --all'
+alias gc='git commit'
+alias gb='git branch'
+alias gbd='git branch -d'
+alias gcm="git checkout main"
+alias gco="git checkout"
+alias gcb="git checkout -b"
+
+alias parrot="curl parrot.live"
+
+###################################################################################################
+# FUNCTIONS
+###################################################################################################
+
+# [ -f "$HOME/Documents/Bash-programes/tmux-short.sh" ] && source "$HOME/Documents/Bash-programes/tmux-short.sh"
+
+function vf {
+  local FILE=$(rg --files --hidden | fzf --preview 'head -50 {}')
+
+  if [[ ! -z $FILE ]]; then
+    v $FILE
+  fi
+}
+
+
+function sfind {
+  fd -t d \
+      --no-ignore-vcs \
+      --color never \
+      --strip-cwd-prefix \
+      -E node_modules \
+      -E .next \
+      -E libraries \
+      -E snap \
+      -E bin \
+      -E .cache \
+      -E dist \
+      -E build \
+      -E pkg \
+      -E target \
+      -E Zomboid \
+      -E android \
+      -E Notas \
+      -E ios
+}
+
+function jf {
+  local NEXTDIR=$(sfind | fzf)
+  if [[ ! -z $NEXTDIR ]]; then
+    cd $NEXTDIR
+  fi
+}
+
+function extract {
+ if [ -z "$1" ]; then
+    # display usage if no parameters given
+    echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
+    echo "       extract <path/file_name_1.ext> [path/file_name_2.ext] [path/file_name_3.ext]"
+    return 1
+ else
+    for n in $@
+    do
+      if [ -f "$n" ] ; then
+          case "${n%,}" in
+            *.tar.bz2|*.tar.gz|*.tar.xz|*.tbz2|*.tgz|*.txz|*.tar) 
+                         tar xvf "$n"       ;;
+            *.lzma)      unlzma ./"$n"      ;;
+            *.bz2)       bunzip2 ./"$n"     ;;
+            *.rar)       unrar x -ad ./"$n" ;;
+            *.gz)        gunzip ./"$n"      ;;
+            *.zip)       unzip ./"$n"       ;;
+            *.z)         uncompress ./"$n"  ;;
+            *.7z|*.arj|*.cab|*.chm|*.deb|*.dmg|*.iso|*.lzh|*.msi|*.rpm|*.udf|*.wim|*.xar)
+                         7z x ./"$n"        ;;
+            *.xz)        unxz ./"$n"        ;;
+            *.exe)       cabextract ./"$n"  ;;
+            *)
+                         echo "extract: '$n' - unknown archive method"
+                         return 1
+                         ;;
+          esac
+      else
+          echo "'$n' - file does not exist"
+          return 1
+      fi
+    done
+ fi
+}

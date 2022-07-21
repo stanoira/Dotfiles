@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# forked from christian chiarulli machfiles repo on:
+# https://github.com/christianchiarulli/machfiles
+## autoload vcs and colors
+autoload -Uz vcs_info
+autoload -U colors && colors
+
+# enable only git 
+zstyle ':vcs_info:*' enable git 
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' unstagedstr '!'
+zstyle ':vcs_info:*' stagedstr '+'
+zstyle ':vcs_info:*' formats "%u%c↑"
+
+
+# setup a hook that runs before every ptompt.
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+
+zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
+
++vi-git-untracked(){
+    if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+        git status --porcelain | grep '??' &> /dev/null ; then
+        hook_com[staged]+='?'
+    fi
+}
+
+
+
+
+zstyle ':vcs_info:git:*' formats " %{$fg[green]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]%}%{$fg[green]%}%b%{$fg[green]%})"
+
+PROMPT="%{$fg[blue]%}%c\$vcs_info_msg_0_ %{$reset_color%}%(?:%{$fg_bold[magenta]%}%{$fg_bold[blue]%}%{$fg_bold[cyan]%} :%{$fg_bold[red]%} )"
+

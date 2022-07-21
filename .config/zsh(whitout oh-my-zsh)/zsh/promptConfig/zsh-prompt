@@ -1,0 +1,18 @@
+# load zsh prompts
+fpath=($fpath "/home/wiz/.config/zsh/.zfunctions")
+
+if [[ "$(tty)" = "/dev/tty1" ]]; then 
+    [ -f "$HOME/.config/zsh/promptConfig/zsh-wiz" ] && source "$HOME/.config/zsh/promptConfig/zsh-wiz"
+    alias x='startx ~/.config/X11/xinitrc'
+elif [[ "$USE_PROMPT" == "spaceship" ]]; then
+    [ -f "$HOME/.config/zsh/promptConfig/zsh-spaceship" ] && source "$HOME/.config/zsh/promptConfig/zsh-spaceship"
+    autoload -U promptinit; promptinit
+    prompt spaceship
+elif [[ "$USE_PROMPT" == "typewritten" ]]; then
+    [ -f "$HOME/.config/zsh/promptConfig/zsh-typewritten" ] && source "$HOME/.config/zsh/promptConfig/zsh-typewritten"
+    autoload -U promptinit; promptinit
+    prompt typewritten
+else
+    [ -f "$HOME/.config/zsh/promptConfig/zsh-wiz" ] && source "$HOME/.config/zsh/promptConfig/zsh-wiz"
+fi
+
