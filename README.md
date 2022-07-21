@@ -18,4 +18,7 @@ sudo pacman -S npm
 ### Galery:
 
 #### Rose-Pine
-![SCREEN](/Pictures/2022-07-14_16-52.png)
+![SCREENSHOT](/Pictures/2022-07-14_16-52.png)
+
+### Tokyo-Night
+<!-- ![SCREENSHOT]() -->
