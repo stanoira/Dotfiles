@@ -11,7 +11,7 @@
 * Terminal File Manager -> lofi
 * Notification Manager -> dunst
 
-Here are some things that may be helpful:
+###Here are some things that may be helpful:
 
 * change the default aplication for a MIME type:
   $ xdg-mime default feh.desktop image/jpeg
