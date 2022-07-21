@@ -12,13 +12,11 @@
 
 Here are some things that may be helpful:
 
-change the default aplication for a MIME type:
+* change the default aplication for a MIME type:
   $ xdg-mime default feh.desktop image/jpeg
   (https://wiki.archlinux.org/title/Xdg-utils)
 
--- autosugestion for python in nvim
-
-sudo pacman -S npm
+* autosugestion for python in nvim: sudo pacman -S npm
 
 ### Galery:
 
