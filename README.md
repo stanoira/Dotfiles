@@ -9,6 +9,7 @@
 * Shell -> zsh
 * Status Bar -> Polybar
 * Terminal File Manager -> lofi
+* Notification Manager -> dunst
 
 Here are some things that may be helpful:
 
