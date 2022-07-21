@@ -25,4 +25,4 @@ Here are some things that may be helpful:
 ![SCREEN](/Pictures/Rose-Pine.png)
 
 ### Tokyo-Night
-![SCREEN](/Pictures/Tokyo-Night)
+![SCREEN](/Pictures/Tokyo-Night.png)
