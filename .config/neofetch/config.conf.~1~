@@ -35,7 +35,7 @@ print_info() {
 #    info " ​ ​   " locale  # This only works on glibc systems.
     prin "└───────────────────────────────────────┘"
     # info cols
-    prin "\n \n $(color 1) \n $(color 2) \n $(color 3) \n $(color 4) \n $(color 5) \n $(color 6) \n $(color 7) \n $(color 8)"
+    prin "\n \n \n \n \n \n \n \n \n \n $(color 1) \n $(color 2) \n $(color 3) \n $(color 4) \n $(color 5) \n $(color 6) \n $(color 7) \n $(color 8)"
 
 }
 
