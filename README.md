@@ -19,6 +19,8 @@
 
 * autosugestion for python in nvim: sudo pacman -S npm
 
+* create zsh/zhistory in .cache for autosuggestion if you use zsh(without oh-my-zsh)
+ 
 ### Galery:
 
 #### Rose-Pine
