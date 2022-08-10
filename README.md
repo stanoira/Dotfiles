@@ -20,7 +20,9 @@
 * autosugestion for python in nvim: sudo pacman -S npm
 
 * create zsh/zhistory in .cache for autosuggestion if you use zsh(without oh-my-zsh)
- 
+
+* for image preview and other stuff in lf : https://github.com/cirala/lfimg
+
 ### Galery:
 
 #### Rose-Pine
