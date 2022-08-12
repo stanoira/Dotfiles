@@ -21,7 +21,7 @@ window:
   opacity: 0.90
 
   # Spread additional padding evenly around the terminal content.
-  # dynamic_padding: true
+  dynamic_padding: true
 
   decorations: full
 
@@ -37,9 +37,9 @@ scrolling:
 
 font:
   normal:
-    # family: "Hack Nerd Font Mono"
+    family: "Hack Nerd Font Mono"
     # family: "Iosevka Nerd Font Mono"
-    family: "JetBrains Mono Nerd Font Mono"
+    # family: "JetBrains Mono Nerd Font Mono"
     style: Regular
   bold:
     # family: "Hack Nerd Font Mono"
@@ -63,193 +63,7 @@ font:
   offset:
     x: 0
     y: 0
-#draw_bold_text_with_bright_colors: true
-
-#################################################################################
-
-schemes:
-  Nord: &nord
-    primary:
-        background: '#2e3440'
-        foreground: '#d8dee9'
-        dim_foreground: '#a5abb6'
-    cursor:
-      text: '#2e3440'
-      cursor: '#d8dee9'
-    vi_mode_cursor:
-      text: '#2e3440'
-      cursor: '#d8dee9'
-    selection:
-      text: CellForeground
-      background: '#4c566a'
-    search:
-      matches:
-        foreground: CellBackground
-        background: '#88c0d0'
-      bar:
-        background: '#434c5e'
-        foreground: '#d8dee9'
-    normal:
-      black: '#3b4252'
-      red: '#bf616a'
-      green: '#a3be8c'
-      yellow: '#ebcb8b'
-      blue: '#81a1c1'
-      magenta: '#b48ead'
-      cyan: '#88c0d0'
-      white: '#e5e9f0'
-    bright:
-      black: '#4c566a'
-      red: '#bf616a'
-      green: '#a3be8c'
-      yellow: '#ebcb8b'
-      blue: '#81a1c1'
-      magenta: '#b48ead'
-      cyan: '#8fbcbb'
-      white: '#eceff4'
-    dim:
-      black: '#373e4d'
-      red: '#94545d'
-      green: '#809575'
-      yellow: '#b29e75'
-      blue: '#68809a'
-      magenta: '#8c738c'
-      cyan: '#6d96a5'
-      white: '#aeb3bb'
-
-  Custom: &custom
-    # Default colors
-    primary:
-      background: '#252625'
-      foreground: '#a9a9a3'
-
-    # Normal colors
-    normal:
-      black:   '#424242'
-      red:     '#9E5B78'
-      green:   '#308586'
-      yellow:  '#8E8FA9'
-      blue:    '#486886'
-      magenta: '#715B9D'
-      cyan:    '#3D789D'
-      white:   '#9AABB0'
-
-    # Bright colors
-    bright:
-      black:   '#4D4D4D'
-      red:     '#CC6592'
-      green:   '#62B3B5'
-      yellow:  '#ADAFD4'
-      blue:    '#578EC0'
-      magenta: '#9179C0'
-      cyan:    '#71A7CA'
-      white:   '#CBCBCB'
-
-  tokyo-night: &tokyo-night
-    # Default colors
-    primary:
-      background: '#1a1b26'
-      foreground: '#a9b1d6'
-
-    # Normal colors
-    normal:
-      black:   '#32344a'
-      red:     '#f7768e'
-      green:   '#9ece6a'
-      yellow:  '#e0af68'
-      blue:    '#7aa2f7'
-      magenta: '#ad8ee6'
-      cyan:    '#449dab'
-      white:   '#787c99'
-
-    # Bright colors
-    bright:
-      black:   '#444b6a'
-      red:     '#ff7a93'
-      green:   '#b9f27c'
-      yellow:  '#ff9e64'
-      blue:    '#7da6ff'
-      magenta: '#bb9af7'
-      cyan:    '#0db9d7'
-      white:   '#acb0d0'
-
-  tokyo-night-storm: &tokyo-night-storm
-    # Default colors
-    primary:
-      background: '#24283b'
-      foreground: '#a9b1d6'
-
-    # Normal colors
-    normal:
-      black:   '#32344a'
-      red:     '#f7768e'
-      green:   '#9ece6a'
-      yellow:  '#e0af68'
-      blue:    '#7aa2f7'
-      magenta: '#ad8ee6'
-      cyan:    '#449dab'
-      white:   '#9699a8'
-
-    # Bright colors
-    bright:
-      black:   '#444b6a'
-      red:     '#ff7a93'
-      green:   '#b9f27c'
-      yellow:  '#ff9e64'
-      blue:    '#7da6ff'
-      magenta: '#bb9af7'
-      cyan:    '#0db9d7'
-      white:   '#acb0d0'
-
-colors: &rose-pine
-  primary:
-    background: "#191724"
-    foreground: "#e0def4"
-  cursor:
-    text: "#e0def4"
-    cursor: "#524f67"
-  vi_mode_cursor:
-    text: "#e0def4"
-    cursor: "#524f67"
-  line_indicator:
-    foreground: None
-    background: None
-  selection:
-    text: "#e0def4"
-    background: "#403d52"
-  normal:
-    black: "#26233a"
-    red: "#eb6f92"
-    green: "#31748f"
-    yellow: "#f6c177"
-    blue: "#9ccfd8"
-    magenta: "#c4a7e7"
-    cyan: "#ebbcba"
-    white: "#e0def4"
-  bright:
-    black: "#6e6a86"
-    red: "#eb6f92"
-    green: "#31748f"
-    yellow: "#f6c177"
-    blue: "#9ccfd8"
-    magenta: "#c4a7e7"
-    cyan: "#ebbcba"
-    white: "#e0def4"
-  hints:
-    start:
-      foreground: "#908caa"
-      background: "#1f1d2e"
-    end:
-      foreground: "#6e6a86"
-      background: "#1f1d2e"
-
-# My Colors
-# colors: *nord
-# colors: *custom
-# colors: *tokyo-night
-# colors: *tokyo-night-storm
-colors: *rose-pine
-#################################################################################
+draw_bold_text_with_bright_colors: true
 
 
 selection:
@@ -257,6 +71,9 @@ selection:
   save_to_clipboard: true
 
 windw.dynamic_title: true
+
+import:
+  - ~/.config/alacritty/colorshceme.yml
 
 cursor:
   #   - ▇ Block

@@ -1,14 +1,19 @@
 alias c="clear" 
 alias ..="cd .."
 alias v="nvim"
-alias n="nsxiv"
+alias mpv="devour mpv"
+alias n="devour nsxiv"
 alias cp="cp -i"    
 alias mv="mv -i"    
 alias df='df -h'    
 alias free='free -hm'
 alias path="echo $PATH | sed -e 's/:/\n/g' | sort"
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
-alias ls='ls --color'
+alias ls='lsd'
+alias la='lsd -A'
+alias neofetch='neofetch --ascii ~/.config/neofetch/ascii.txt'
+alias zathura='devour zathura'
+alias lf='lfrun'
 
 #git aliases
 alias g='git'

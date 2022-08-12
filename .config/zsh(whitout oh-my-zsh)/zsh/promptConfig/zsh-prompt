@@ -12,6 +12,8 @@ elif [[ "$USE_PROMPT" == "typewritten" ]]; then
     [ -f "$HOME/.config/zsh/promptConfig/zsh-typewritten" ] && source "$HOME/.config/zsh/promptConfig/zsh-typewritten"
     autoload -U promptinit; promptinit
     prompt typewritten
+elif [[ "$USE_PROMPT" == "stanoira" ]];then
+    [ -f "$HOME/.config/zsh/promptConfig/zsh-stanoira" ] && source "$HOME/.config/zsh/promptConfig/zsh-stanoira"
 else
     [ -f "$HOME/.config/zsh/promptConfig/zsh-wiz" ] && source "$HOME/.config/zsh/promptConfig/zsh-wiz"
 fi

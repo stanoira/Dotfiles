@@ -1,6 +1,6 @@
 neofetch --ascii ~/.config/neofetch/ascii.txt
 
-USE_PROMPT="" # spaceship, typewritten or wiz
+USE_PROMPT="stanoira" # spaceship, typewritten or wiz
 HISTFILE=~/.cache/zsh/zhistory
 HISTSIZE=5000
 SAVEHIST=5000
@@ -22,12 +22,6 @@ setopt inc_append_history     # save commands are added to the history immediate
 autoload -U compinit && compinit -d ~/.config/zsh/zcompdump
 autoload -U colors && colors
 autoload -U zcalc
-
-# Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-
-zmodload zsh/complist
-_comp_options+=(globdots)
 
 # Speed up completions
 zstyle ':completion:*' menu select
