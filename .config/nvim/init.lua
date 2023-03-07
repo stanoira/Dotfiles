@@ -1,26 +1,53 @@
-require("stanoira.sets")
-require("stanoira.plugins")
-require("stanoira.mappings")
-require("stanoira.autocommands")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
--- set colorscheme
-vim.cmd("colorscheme rose-pine")
--- vim.cmd("colorscheme tokyonight")
--- vim.cmd("colorscheme nord")
--- vim.cmd("colorscheme nordfox")
+require("stanoira.options")
+require("lazy").setup("plugins", {
+  defaults = { lazy = true },
+  install = { colorscheme = { "tokyonight", "habamax" } },
+  checker = { enabled = false },
+  change_detection = {
+    -- automatically check for config file changes and reload the ui
+    enabled = false,
+    notify = false, -- get a notification when changes are found
+  },
+  diff = {
+    cmd = "terminal_git",
+  },
+  performance = {
+    cache = {
+      enabled = true,
+    },
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "matchit",
+        "matchparen",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+        "nvim-treesitter-textobjects",
+      },
+    },
+  },
+})
 
-require("stanoira.lsp")
-require("stanoira.cmp")
-require("stanoira.treesitter")
--- require("stanoira.hexcolors")
-require("stanoira.autopairs")
-require("stanoira.comment")
-require("stanoira.nvim-tree")
-require("stanoira.alpha")
-require("stanoira.telescope")
-require("stanoira.lualine")
-require("stanoira.todocomments")
-require("stanoira.toggleterm")
-require("stanoira.indentline")
-require("stanoira.twilight")
-require("packer_compiled")
+vim.api.nvim_create_autocmd("User", {
+  pattern = "VeryLazy",
+  callback = function()
+    require("stanoira.keymaps")
+    require("stanoira.autocommands")
+  end,
+})

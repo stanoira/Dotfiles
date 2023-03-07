@@ -53,4 +53,3 @@ vim.cmd([[autocmd BufNewFile,BufRead *.wiki,*.mdx set ft=markdown]])
 --     vim.highlight.on_yank({ higroup = "Visual", timeout = 100 })
 --   end,
 -- })
-
