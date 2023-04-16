@@ -40,4 +40,26 @@
 
 ### Dmenu
 
+![SCREEN](/Pictures/dmenu.png)
+
+### Power Profile
+
+![SCREEN](/Pictures/power-profile.png)
+
+### Power Menu
+
+![SCREEN](/Pictures/power-menu.png)
+
+### Calc
+
+![SCREEN](/Pictures/calc.png)
+
+### Notification Center
+
+![SCREEN](/Pictures/noitification-center.png)
+
+### Oldrofi
+
+![SCREEN](/Pictures/old-rofi.png)
+
 </details>
