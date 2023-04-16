@@ -27,7 +27,7 @@
 
 ### Galery:
 
-#### Rose-Pine
+### Rose-Pine
 
 ![SCREEN](/Pictures/Rose-Pine.png)
 
