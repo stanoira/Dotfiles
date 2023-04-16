@@ -36,7 +36,7 @@
 ![SCREEN](/Pictures/Tokyo-Night.png)
 
 <details>
-    <summary>Rofi Menu</summary>
+    <summary>### Rofi Menu</summary>
 
 ### Dmenu
 
@@ -56,7 +56,7 @@
 
 ### Notification Center
 
-![SCREEN](/Pictures/noitification-center.png)
+![SCREEN](/Pictures/notification-center.png)
 
 ### Oldrofi
 
