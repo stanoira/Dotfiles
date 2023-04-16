@@ -36,7 +36,7 @@
 ![SCREEN](/Pictures/Tokyo-Night.png)
 
 <details>
-    <sumary>Rofi Menu</sumary>
+    <summary>Rofi Menu</summary>
     ### dmenu
     <!-- ![SCREEN]() -->
     ### Power Profile
