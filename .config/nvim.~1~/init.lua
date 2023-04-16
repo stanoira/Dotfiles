@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("stanoira.options")
 require("lazy").setup("plugins", {
   defaults = { lazy = true },
-  install = { colorscheme = { "tokyonight", "habamax" } },
+  install = { colorscheme = { "tokyonight", "catppuccin" } },
   checker = { enabled = false },
   change_detection = {
     -- automatically check for config file changes and reload the ui

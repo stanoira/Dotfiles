@@ -179,13 +179,16 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # exit-menu
-bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
+# bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
+# alternative powermenu
+bindsym $mod+Shift+e exec ~/.local/bin/powermenu
 
 # Lock the system
 # lock with a picture:
 #bindsym $mod+l exec i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
 # lock by blurring the screen:
-bindsym $mod+l exec ~/.config/i3/scripts/blur-lock
+# bindsym $mod+l exec ~/.config/i3/scripts/blur-lock
+bindsym $mod+l exec ~/.local/bin/screen-lock
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -251,7 +254,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # open new empty workspace
-bindsym $mod+Shift+n exec ~/.config/i3/scripts/empty_workspace
+# bindsym $mod+Shift+n exec ~/.config/i3/scripts/empty_workspace
 
 # Multimedia Keys
 
@@ -275,13 +278,14 @@ bindsym XF86AudioPrev exec playerctl previous
 # Redirect sound to headphones
 bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
-## App shortcuts
+## Personal shortcuts
 bindsym $mod+w exec /usr/bin/firefox
-bindsym $mod+n exec /usr/bin/thunar
+bindsym $mod+n exec /usr/bin/nemo
 bindsym $mod+Shift+v exec code
 bindsym Print exec scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 bindsym $mod+Shift+s exec flameshot gui
 bindsym $mod+Shift+f exec flameshot screen -p ~/Pictures/ScreenShots/
+bindsym $mod+Shift+n exec ~/.local/bin/noticenter
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
@@ -327,10 +331,10 @@ set $ws10 "10"
 # bind program to workspace and focus to them on startup:
 assign [class="Xfce4-terminal"] $ws1
 assign [class="Alacritty"] $ws1
-# assign [class="Thunar"] $ws2
 assign [class="Code"] $ws2
 assign [class="(?i)firefox"] $ws3
 assign [class="discord"] $ws4
+assign [class="Steam"] $ws5
 assign [class="easyeffects"] $ws9
 
 for_window [class="Spotify"] move to workspace 10
@@ -339,7 +343,6 @@ for_window [class="Spotify"] move to workspace 10
 for_window [class=Xfce4-terminal] focus
 for_window [class=Alacritty] focus
 for_window [class=(?i)firefox] focus
-for_window [class=Thunar] focus
 for_window [class=Code] focus
 # for_window [class=Thunderbird] focus
 # for_window [class=TelegramDesktop] focus
@@ -399,7 +402,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id setxkbmap -layout us -variant intl 
 
 # start conky:
-#exec_always --no-startup-id conky
+# exec_always --no-startup-id ~/.config/conky/Betelgeuse/launch.sh
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
@@ -408,7 +411,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 # set wallpaper
 #exec --no-startup-id sleep 2 && nitrogen --restore
 #exec --no-startup-id feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros_i3.png
-exec --no-startup-id feh  --bg-fill ~/Pictures/astronaut.png
+exec --no-startup-id feh  --bg-fill ~/Pictures/wallpapers/HollowKnight4.png
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -474,7 +477,7 @@ for_window [class="Pamac-manager"] floating enable
 for_window [window_role="About"] floating enable
 
 # set border of floating window
-for_window [class="urxvt"] border pixel 1
+for_window [class=".*"] border pixel 1
 
 # set size of floating window
 #for_window [window_role="(?i)GtkFileChooserDialog"] resize set 640 480 #to set size of file choose dialog
@@ -488,24 +491,23 @@ for_window [class="urxvt"] border pixel 1
 ######################################
 
 # Define colors variables:
-set $darkbluetrans	#08052be6
-set $darkblue		#08052b
-set $lightblue		#5294e2
-set $urgentred		#e53935
+set $darkbluetrans	#31748fe6
+set $darkblue		#31748f
+set $lightblue		#9ccfd8
+set $urgentred		#eb6f92
 set $white		#ffffff
 set $black		#000000
-set $purple		#e345ff
+set $purple		#c4a7e7
 set $grey		#b0b5bd
 set $mediumgrey		#6e6a86
 set $darkgrey		#252625
-#set $darkgrey		#383c4a
-set $yellowbrown	#e1b700
+set $yellow         #f6c177
 
 # define colors for windows:
 #class		        border		bground		text		indicator	child_border
-client.focused		$lightblue	$darkblue	$white		$mediumgrey		$mediumgrey
-client.unfocused	$darkblue	$darkblue	$grey		$grey		$darkgrey
-client.focused_inactive	$darkblue	$darkblue	$grey		$grey		$black
+client.focused		$purple 	$purple 	$darkgrey   $purple 	$purple
+client.unfocused	$darkgrey	$dargrey	$darkgrey	$darkgrey	$darkgrey
+client.focused_inactive	$purple	$purple     $darkgrey	$darkgrey   $darkgrey
 client.urgent		$urgentred	$urgentred	$white		$grey		$urgentred
 
 ############################################
@@ -578,12 +580,14 @@ client.urgent		$urgentred	$urgentred	$white		$grey		$urgentred
 
 ## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
 
-bindsym $mod+d exec rofi -modi drun -show drun \
-		-config ~/.config/rofi/rofidmenu.rasi
+# bindsym $mod+d exec rofi -modi drun -show drun \
+# 		-config ~/.config/rofi/rofidmenu.rasi
 
-bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.config/rofi/rofidmenu.rasi
+bindsym $mod+d exec rofi -show drun -theme ~/.config/rofi/themes/app-launcher.rasi
 
-#bindsym F9 exec rofi -modi drun -show drun \
+bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.config/rofi/themes/calc.rasi
+
+# bindsym F9 exec rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
 
 ## rofi bindings for window menu ($mod+t /F10 optional disabled)
@@ -599,3 +603,4 @@ bindsym $mod+t exec rofi -show window \
 #exec --no-startup-id greenclip daemon>/dev/null
 #bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard \
 #		-config ~/.config/rofi/rofidmenu.rasi
+

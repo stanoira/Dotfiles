@@ -58,9 +58,9 @@ keymap("n", "<leader>bs", "<cmd>Telescope buffers<CR>", opts)
 keymap("n", "<leader>bd", "<cmd>bdelete<CR>", opts)
 
 -- Colorizer
-keymap("n", "<leader>bca", "<cmd>ColorizerAttachToBuffer<CR>", opts)
-keymap("n", "<leader>bcd", "<cmd>ColorizerDetachFromBuffer<CR>", opts)
-keymap("n", "<leader>bcr", "<cmd>ColorizerReloadAllBuffers<CR>", opts)
+keymap("n", "<leader>cab", "<cmd>ColorizerAttachToBuffer<CR>", opts)
+keymap("n", "<leader>cdb", "<cmd>ColorizerDetachFromBuffer<CR>", opts)
+keymap("n", "<leader>crb", "<cmd>ColorizerReloadAllBuffers<CR>", opts)
 
 --Stuff
 -- keymap("n", "<leader>s", "<cmd>Twilight<CR>", opts)
@@ -73,6 +73,9 @@ keymap("n", "<leader>bcr", "<cmd>ColorizerReloadAllBuffers<CR>", opts)
 -- keymap("n", "<leader>vm", function()
 --   require("mind").open_main()
 -- end, opts)
+
+-- TodoComents
+keymap("n", "<space>/", "<cmd>TodoQuickFix<CR>", opts)
 
 -- Neorg
 keymap("n", "<space>n", "<cmd>Neorg workspace notes<CR>", opts)

@@ -25,20 +25,20 @@ function M.config()
       })
     end,
 
-    -- Next, you can provide targeted overrides for specific servers.
-    ["rust_analyzer"] = function()
-      local rust_config = require("plugins.lsp.settings.rust")
-      local rust_tools = require("rust-tools")
-
-      rust_tools.setup({
-        server = {
-          on_attach = on_attach,
-          capabilities = capabilities,
-          settings = rust_config.opts,
-        },
-        tools = rust_config.tools,
-      })
-    end,
+    -- -- Next, you can provide targeted overrides for specific servers.
+    -- ["rust_analyzer"] = function()
+    --   local rust_config = require("plugins.lsp.settings.rust")
+    --   local rust_tools = require("rust-tools")
+    --
+    --   rust_tools.setup({
+    --     server = {
+    --       on_attach = on_attach,
+    --       capabilities = capabilities,
+    --       settings = rust_config.opts,
+    --     },
+    --     tools = rust_config.tools,
+    --   })
+    -- end,
 
     ["lua_ls"] = function()
       lspconfig.lua_ls.setup({
@@ -48,15 +48,15 @@ function M.config()
       })
     end,
 
-    ["tsserver"] = function()
-      lspconfig.tsserver.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-        root_dir = lspconfig.util.root_pattern("package.json"),
-        filetypes = { "typescript", "typescriptreact", "typescript.tsx", "mdx", "javascript" },
-        single_file_support = false,
-      })
-    end,
+    -- ["tsserver"] = function()
+    --   lspconfig.tsserver.setup({
+    --     on_attach = on_attach,
+    --     capabilities = capabilities,
+    --     root_dir = lspconfig.util.root_pattern("package.json"),
+    --     filetypes = { "typescript", "typescriptreact", "typescript.tsx", "mdx", "javascript" },
+    --     single_file_support = false,
+    --   })
+    -- end,
 
     ["pyright"] = function()
       lspconfig.pyright.setup({
@@ -66,22 +66,22 @@ function M.config()
       })
     end,
 
-    ["denols"] = function()
-      lspconfig.denols.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-        root_dir = lspconfig.util.root_pattern("deno.json", "deno.cjson"),
-        filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-      })
-    end,
+    -- ["denols"] = function()
+    --   lspconfig.denols.setup({
+    --     on_attach = on_attach,
+    --     capabilities = capabilities,
+    --     root_dir = lspconfig.util.root_pattern("deno.json", "deno.cjson"),
+    --     filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+    --   })
+    -- end,
 
-    ["tailwindcss"] = function()
-      lspconfig.tailwindcss.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-        filetypes = { "typescript", "typescriptreact", "typescript.tsx", "astro", "javascript" },
-      })
-    end,
+    -- ["tailwindcss"] = function()
+    --   lspconfig.tailwindcss.setup({
+    --     on_attach = on_attach,
+    --     capabilities = capabilities,
+    --     filetypes = { "typescript", "typescriptreact", "typescript.tsx", "astro", "javascript" },
+    --   })
+    -- end,
   })
 
   require("plugins.null-ls").setup(on_attach)
