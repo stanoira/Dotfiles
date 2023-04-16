@@ -34,3 +34,12 @@
 ### Tokyo-Night
 
 ![SCREEN](/Pictures/Tokyo-Night.png)
+
+<details>
+    <sumary>Rofi Menu</sumary>
+    ### dmenu
+    <!-- ![SCREEN]() -->
+    ### Power Profile
+    <!-- ![SCREEN](### Rofi-Menu -->
+)
+</details>
