@@ -36,7 +36,7 @@
 ![SCREEN](/Pictures/Tokyo-Night.png)
 
 <details>
-    <summary>### Rofi Menu</summary>
+    <summary>Rofi Menu</summary>
 
 ### Dmenu
 
