@@ -37,9 +37,11 @@
 
 <details>
     <summary>Rofi Menu</summary>
+
     ### dmenu
     <!-- ![SCREEN]() -->
+
     ### Power Profile
-    <!-- ![SCREEN](### Rofi-Menu -->
-)
+    <!-- ![SCREEN]() -->
+
 </details>
