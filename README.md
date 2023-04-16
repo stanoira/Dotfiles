@@ -38,8 +38,6 @@
 <details>
     <summary>Rofi Menu</summary>
 
-    ### dmenu
-
-    ### Power Profile
+### Dmenu
 
 </details>
