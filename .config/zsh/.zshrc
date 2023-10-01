@@ -1,10 +1,3 @@
-#################################################################################
-# Uncomment this to execute neofetch when open a terminal
-neofetch --ascii ~/.config/neofetch/ascii.txt
-alias v="nvim"
-alias parrot="curl parrot.live"
-#################################################################################
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -82,6 +75,7 @@ git
 zsh-autosuggestions
 zsh-syntax-highlighting 
 )
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -105,7 +99,36 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
+
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias c="clear" 
+alias ..="cd .."
+alias v="nvim"
+alias mpv="devour mpv"
+alias n="devour nsxiv"
+alias cp="cp -i"    
+alias mv="mv -i"    
+alias df='df -h'    
+alias free='free -hm'
+alias path="echo $PATH | sed -e 's/:/\n/g' | sort"
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+alias ls='lsd'
+alias la='lsd -A'
+alias neofetch='neofetch --ascii ~/.config/neofetch/ascii.txt'
+alias zathura='devour zathura'
+alias parrot="curl parrot.live"
+alias lf='lfrun'
+
+# Git aliases
+alias g='git'
+alias gp='git push'
+alias gs='git status'
+alias ga='git add'
+alias gaa='git add --all'
+alias gc='git commit'
+alias gb='git branch'
+alias gbd='git branch -d'
+alias gcm="git checkout main"
+alias gco="git checkout"
+alias gcb="git checkout -b"
